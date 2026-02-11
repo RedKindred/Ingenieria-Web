@@ -1,0 +1,71 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #e0e0e0; /* Gris de fondo como en tu imagen */
+}
+
+/* Header y Footer en Verde */
+header, footer {
+    background-color: #4CAF50; /* Verde similar al de la imagen */
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+header h1, footer p {
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Contenedor principal */
+.container {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    overflow: hidden;
+}
+
+/* Mosaico Estilo Float */
+.mosaico-item {
+    float: left;
+    width: 31.33%; /* 3 por fila */
+    margin: 1%;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 5px; /* Espacio blanco alrededor de la foto */
+}
+
+.mosaico-item img {
+    width: 100%;
+    height: 200px; /* Ajusta según prefieras */
+    display: block;
+    object-fit: cover; 
+}
+
+/* Información debajo de la foto */
+.info {
+    padding: 10px 5px;
+    text-align: left;
+}
+
+.info h3 {
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+.info p {
+    font-size: 10px;
+    color: #666;
+}
+
+/* Limpiar los floats */
+.mosaico::after {
+    content: "";
+    display: table;
+    clear: both;
+}
