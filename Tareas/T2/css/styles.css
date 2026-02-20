@@ -1,0 +1,110 @@
+/* Paleta de colores */
+:root {
+    --primario: #4B0082;    /* Morado Indigo (Header, Footer, Sidebar) */
+    --fondo-sitio: #EBE7F0; /* Lila suave para el fondo */
+    --blanco-card: #ffffff; /* Blanco para resaltar las tarjetas */
+    --negro-ref: #000;      
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: var(--fondo-sitio);
+}
+
+/* Header y Footer con el mismo color */
+header, footer {
+    background-color: var(--primario);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+header h1, footer p {
+    font-size: 14px; /* Tamaño solicitado */
+    font-weight: bold;
+}
+
+/* Estructura Flexbox principal */
+.layout-flex {
+    display: flex;
+    min-height: calc(100vh - 80px);
+}
+
+/* Menú Lateral */
+.sidebar {
+    background-color: var(--negro-ref); 
+    width: 200px;
+    padding-top: 30px;
+}
+
+.sidebar ul {
+    list-style: none;
+    text-align: center;
+}
+
+.sidebar ul li {
+    margin-bottom: 20px;
+}
+
+.sidebar ul li a {
+    color: #D1C4E9;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Área del Catálogo */
+.container {
+    flex: 1;
+    padding: 25px; /* Margen externo para que no pegue a los bordes */
+}
+
+.mosaico {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; /* Separación estética entre tarjetas */
+}
+
+/* Estilo de la imagen dentro de la tarjeta */
+.card img {
+    width: 100%;           
+    height: 180px;         
+    display: block;        /* Elimina espacios extra debajo de la imagen */
+    object-fit:scale-down;     
+    object-position: center; /* Asegura que el centro de la imagen sea lo que se vea */
+}
+
+/* Ajuste del contenedor de la tarjeta */
+.card {
+    background-color: var(--blanco-card);
+    width: 31%;            /* Mantiene 3 por fila */
+    min-width: 250px;      /* Evita que se vuelvan demasiado delgadas en pantallas pequeñas */
+    border: 1px solid #ccc;
+    padding: 6px;          
+    display: flex;         /* Permite alinear el contenido interno */
+    flex-direction: column;
+}
+
+/* Información con tamaños de fuente de la imagen de referencia */
+.info {
+    padding: 12px 5px;
+    text-align: left;
+}
+
+.info h3 {
+    font-size: 12px; /* Tamaño del nombre */
+    margin-bottom: 6px;
+    color: #000;
+}
+
+.info p {
+    font-size: 10px; /* Tamaño de descripcion */
+    color: #666;
+}
